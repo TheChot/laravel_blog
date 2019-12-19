@@ -1,1 +1,3 @@
-## Laravel Blogger Starter
+## Laravel Blog Starter
+
+A simple blogging application
