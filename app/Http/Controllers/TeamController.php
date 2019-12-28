@@ -4,32 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Blog;
+use App\TeamMembers;
 
-
-
-class BlogController extends Controller
+class TeamController extends Controller
 {
     public function index(){
-        $blogs= Blog::orderBy('created_at','desc')->paginate(10);
-        return view('blog.index', compact('posts'));
+        $team_members= TeamMembers::where('status', 1)->orderBy('level','asc')->get();
+        return view('team.index', compact('team_members'));
     }
 
-    public function singleBlog($id){
-        $blog = Blog::find($id);
-        if(!isset($blog)){
-            return redirect()->route('home');
+    
 
-        }
-
-        return view('blog.single', compact('blog'));
+    public function addTeamMemberPage(){
+        return view('team.create');
     }
 
-    public function addBlogPage(){
-        return view('blog.create');
-    }
-
-    public function addBlog(Request $request){
+    public function addTeamMember(Request $request){
 
         $this->validate($request,[
             'title'=>'required',
@@ -48,38 +38,38 @@ class BlogController extends Controller
             //file name to store
             $fileNameToStore = $filename.'_'.time().'_'.$extension;
             //Upload Image
-            $path = $request->file('cover_image')->storeAs('public/media/blog_images', $fileNameToStore);
+            $path = $request->file('cover_image')->storeAs('public/media/team_images', $fileNameToStore);
 
         } else{
             $fileNameToStore = 'noimage.jpg';
         }
 
-        $blog = new Blog;
+        $team_member = new TeamMembers;
 
-        $blog->title = $request->title;
-        $blog->body = $request->body;
-        $blog->cover_image = $fileNameToStore;
+        $team_member->title = $request->title;
+        $team_member->body = $request->body;
+        $team_member->cover_image = $fileNameToStore;
 
 
-        $blog->save();
+        $team_member->save();
 
         return redirect()->route('home');
 
     }
 
-    public function editBlogPage($id){
+    public function editTeamMemberPage($id){
 
-        $blog = Blog::find($id);
+        $team_member = TeamMembers::find($id);
 
-        if(!isset($blog)){
+        if(!isset($team_member)){
             return redirect()->route('home');
 
         }
 
-        return view('blog.edit', compact('blog'));
+        return view('team.edit', compact('blog'));
     }
 
-    public function editBlog(Request $request, $id){
+    public function editTeamMember(Request $request, $id){
 
 
 
@@ -89,7 +79,7 @@ class BlogController extends Controller
             'cover_image'=>'image|nullable',
         ]);
 
-        $blog = Blog::find($id);
+        $team_member = TeamMembers::find($id);
 
         //handle file upload
         if($request->hasFile('cover_image')){
@@ -102,20 +92,20 @@ class BlogController extends Controller
             //file name to store
             $fileNameToStore = $filename.'_'.time().'_'.$extension;
             //Upload Image
-            $path = $request->file('cover_image')->storeAs('public/media/blog_images', $fileNameToStore);
+            $path = $request->file('cover_image')->storeAs('public/media/team_images', $fileNameToStore);
 
-            Storage::delete('public/media/blog_images/'.$blog->cover_image);
+            Storage::delete('public/media/team_images/'.$team_member->cover_image);
 
         }
 
         
 
 
-        $blog->title = $request->title;
-        $blog->body = $request->body;
+        $team_member->title = $request->title;
+        $team_member->body = $request->body;
 
         
-        $blog->save();
+        $team_member->save();
 
         return redirect()->route('home');
 
