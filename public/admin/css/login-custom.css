@@ -1,0 +1,17 @@
+html,
+body {
+    height: 100%;
+    background-color: slategrey;
+    overflow-y: hidden;
+}
+.login-page {
+    height: 100%;
+    background-color: slategrey;
+}
+
+.login-area {
+    max-width: 30%;
+    margin: auto;
+    margin-top: 10%;
+    background-color: white;
+}

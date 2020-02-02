@@ -30,6 +30,9 @@
     </div>-->
 
 </div>
+{{-- @php
+$product = \App\Product::find($cart->product_id);
+@endphp --}}
 <!--Home page first section-->
 <div class="container section-150">
     <div class="row">
