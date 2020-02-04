@@ -1,3 +1,3 @@
 ## Laravel Blog Starter
 
-A simple blogging application
+A single user blogging application to serve as a starting template

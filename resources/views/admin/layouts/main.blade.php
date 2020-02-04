@@ -25,6 +25,7 @@
     <link href="{{ asset('admin/css/custom.css') }}" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    @yield('css')
 
     <link href="{{ asset('admin/css/admin-custom.css') }}" rel="stylesheet">
 
@@ -51,9 +52,12 @@
                         class="fa fa-envelope-o fa-2x"></i></a>
                 <a href="message-task.html" class="btn btn-primary" title="New Task"><b>40 </b><i
                         class="fa fa-bars fa-2x"></i></a>
-                <a href="login.html" class="btn btn-danger" title="Logout"><i
+                <a href="{{ route('logout') }}" class="btn btn-danger" title="Logout" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i
                         class="fa fa-exclamation-circle fa-2x"></i></a>
-
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </div>
         </nav>
         <!-- /. NAV TOP  -->
@@ -75,91 +79,27 @@
                         <a href="#"><i class="fa fa-desktop "></i>Blogs <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="panel-tabs.html"><i class="fa fa-toggle-on"></i>All Blogs</a>
+                                <a href="{{route('admin.news')}}"><i class="fa fa-toggle-on"></i>All Blogs</a>
                             </li>
                             <li>
-                                <a href="notification.html"><i class="fa fa-bell "></i>Add Blogs</a>
+                                <a href="{{route('admin.news.add.page')}}"><i class="fa fa-bell "></i>Add Blog</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-yelp "></i>Extra Pages <span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-desktop "></i>Users <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="invoice.html"><i class="fa fa-coffee"></i>Invoice</a>
+                                <a href="panel-tabs.html"><i class="fa fa-toggle-on"></i>All Users</a>
                             </li>
                             <li>
-                                <a href="pricing.html"><i class="fa fa-flash "></i>Pricing</a>
-                            </li>
-                            <li>
-                                <a href="component.html"><i class="fa fa-key "></i>Components</a>
-                            </li>
-                            <li>
-                                <a href="social.html"><i class="fa fa-send "></i>Social</a>
-                            </li>
-
-                            <li>
-                                <a href="message-task.html"><i class="fa fa-recycle "></i>Messages & Tasks</a>
-                            </li>
-
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="table.html"><i class="fa fa-flash "></i>Data Tables </a>
-
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-bicycle "></i>Forms <span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-
-                            <li>
-                                <a href="form.html"><i class="fa fa-desktop "></i>Basic </a>
-                            </li>
-                            <li>
-                                <a href="form-advance.html"><i class="fa fa-code "></i>Advance</a>
-                            </li>
-
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="gallery.html"><i class="fa fa-anchor "></i>Gallery</a>
-                    </li>
-                    <li>
-                        <a href="error.html"><i class="fa fa-bug "></i>Error Page</a>
-                    </li>
-                    <li>
-                        <a href="login.html"><i class="fa fa-sign-in "></i>Login Page</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Multilevel Link <span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#"><i class="fa fa-bicycle "></i>Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-flask "></i>Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#"><i class="fa fa-plus "></i>Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-comments-o "></i>Third Level Link</a>
-                                    </li>
-
-                                </ul>
-
+                                <a href="notification.html"><i class="fa fa-bell "></i>Add Users</a>
                             </li>
                         </ul>
                     </li>
 
-                    <li>
-                        <a href="blank.html"><i class="fa fa-square-o "></i>Blank Page</a>
-                    </li>
+
+
                 </ul>
 
             </div>
@@ -187,6 +127,7 @@
     <script src="{{ asset('admin/js/bootstrap.js') }}"></script>
     <!-- METISMENU SCRIPTS -->
     <script src="{{ asset('admin/js/jquery.metisMenu.js') }}"></script>
+    @yield('scripts')
     <!-- CUSTOM SCRIPTS -->
     <script src="{{ asset('admin/js/custom.js') }}"></script>
 

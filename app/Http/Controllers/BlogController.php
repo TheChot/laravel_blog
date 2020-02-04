@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Storage;
+
 use App\Blog;
 
 
@@ -14,7 +16,7 @@ class BlogController extends Controller
 
         // Auth::user()
         $blogs= Blog::orderBy('created_at','desc')->paginate(10);
-        return view('blog.index', compact('posts'));
+        return view('admin.blog.index', compact('blogs'));
     }
 
     public function singleBlog($id){
@@ -28,16 +30,16 @@ class BlogController extends Controller
     }
 
     public function addBlogPage(){
-        return view('blog.create');
+        return view('admin.blog.create');
     }
 
     public function addBlog(Request $request){
-
-        $this->validate($request,[
-            'title'=>'required',
-            'body'=>'required',
-            'cover_image'=>'image|nullable',
-        ]);        
+        // return $request->title;
+        // $this->validate($request,[
+        //     'title'=>'required',
+        //     'body'=>'required',
+        //     'cover_image'=>'image|nullable',
+        // ]);        
         
         //handle file upload
         if($request->hasFile('cover_image')){
@@ -48,7 +50,7 @@ class BlogController extends Controller
             //get just ext
             $extension = $request->file('cover_image')->getClientOriginalExtension();
             //file name to store
-            $fileNameToStore = $filename.'_'.time().'_'.$extension;
+            $fileNameToStore = $filename.'_'.time().'_.'.$extension;
             //Upload Image
             $path = $request->file('cover_image')->storeAs('public/media/blog_images', $fileNameToStore);
 
@@ -60,12 +62,12 @@ class BlogController extends Controller
 
         $blog->title = $request->title;
         $blog->body = $request->body;
-        $blog->cover_image = $fileNameToStore;
+        $blog->cover_img = $fileNameToStore;
 
 
         $blog->save();
 
-        return redirect()->route('home');
+        return redirect()->back();
 
     }
 
@@ -74,22 +76,22 @@ class BlogController extends Controller
         $blog = Blog::find($id);
 
         if(!isset($blog)){
-            return redirect()->route('home');
+            return redirect()->back();
 
         }
 
-        return view('blog.edit', compact('blog'));
+        return view('admin.blog.edit', compact('blog'));
     }
 
     public function editBlog(Request $request, $id){
 
 
 
-        $this->validate($request,[
-            'title'=>'required',
-            'body'=>'required',
-            'cover_image'=>'image|nullable',
-        ]);
+        // $this->validate($request,[
+        //     'title'=>'required',
+        //     'body'=>'required',
+        //     'cover_image'=>'image|nullable',
+        // ]);
 
         $blog = Blog::find($id);
 
@@ -102,11 +104,13 @@ class BlogController extends Controller
             //get just ext
             $extension = $request->file('cover_image')->getClientOriginalExtension();
             //file name to store
-            $fileNameToStore = $filename.'_'.time().'_'.$extension;
+            $fileNameToStore = $filename.'_'.time().'_.'.$extension;
             //Upload Image
             $path = $request->file('cover_image')->storeAs('public/media/blog_images', $fileNameToStore);
 
+            // if($blog->)
             Storage::delete('public/media/blog_images/'.$blog->cover_image);
+            $blog->cover_img = $fileNameToStore;
 
         }
 
@@ -119,7 +123,7 @@ class BlogController extends Controller
         
         $blog->save();
 
-        return redirect()->route('home');
+        return redirect()->back();
 
     }
 }

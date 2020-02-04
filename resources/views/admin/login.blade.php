@@ -7,19 +7,19 @@
             LOGIN
         </div>
         <div class="panel-body">
-            <form role="form">
+            <form role="form" method="POST" action="{{ route('login') }}">
 
                 <div class="form-group">
                     <label>Enter Email</label>
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" name="email">
                 </div>
                 <div class="form-group">
                     <label>Enter Password</label>
-                    <input class="form-control" type="password">
+                    <input class="form-control" type="password" name="password">
                 </div>
 
-
-                <a href="{{route('admin.dashboard')}}" class="btn btn-danger">LOGIN</a>
+                <button type="submit" class="btn btn-danger">LOGIN</button>
+                {{-- <a href="{{route('admin.dashboard')}}" class="btn btn-danger">LOGIN</a> --}}
 
             </form>
         </div>
