@@ -17,10 +17,11 @@
 </head>
 
 <body>
+    {{-- Navbar --}}
     <div class="mynav-front">
         <ul class="myNav-list mynav-left">
-            <li><a href="{{route('home')}}">Home</a></li>
-            <li><a href="{{route('blog')}}">News</a></li>
+            <li>Home</li>
+            <li>Home</li>
             <li>Home</li>
             <li>Home</li>
         </ul>
@@ -34,6 +35,8 @@
             <li>Home</li>
         </ul>
     </div>
+    {{-- Navbar end --}}
+
 
     @yield('content')
 
@@ -50,7 +53,7 @@
             <div class="row footer-col-container">
                 <div class="col-md-4 footer-col">
                     <h4> Learn More </h4>
-                    <p><a href="{{route('blog')}}">NEWS</a></p>
+                    <p>NEWS</p>
                     <p>APPLY NOW</p>
                     <p>CONTACT US</p>
                     <p>ABOUT US</p>

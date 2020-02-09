@@ -51,7 +51,7 @@
                         <textarea class="form-control" rows="7" name="body">{{$blog->body}}</textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-danger">Register Now </button>
+                    <button type="submit" class="btn btn-primary">ADD CHANGES </button>
 
                 </form>
             </div>

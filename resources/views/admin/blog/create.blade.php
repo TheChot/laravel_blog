@@ -49,7 +49,7 @@
                         <textarea class="form-control" rows="7" name="body"></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-danger">Register Now </button>
+                    <button type="submit" class="btn btn-primary">SAVE BLOG </button>
 
                 </form>
             </div>

@@ -12,14 +12,17 @@
 */
 
 Route::get('/', 'FrontendController@index')->name('home');
+Route::get('/blog', 'FrontendController@blogAll')->name('blog');
+Route::get('/blog/{id}', 'FrontendController@blogSingle')->name('blog.single');
 
 Auth::routes(['register' => false]);
 // Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('oldhome');
+// Route::get('/home', 'HomeController@index')->name('oldhome');
 
-Route::get('/news', 'BlogController@index')->name('news');
-Route::get('/news/{id}', 'BlogController@singleBlog')->name('news.single');
+
+// Route::get('/news', 'BlogController@index')->name('news');
+// Route::get('/news/{id}', 'BlogController@singleBlog')->name('news.single');
 
 
 

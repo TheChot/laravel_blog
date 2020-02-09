@@ -1,3 +1,4 @@
+/* Main layout  */
 .mynav-front {
     background-color: transparent;
     padding: 2px 10px;
@@ -214,3 +215,63 @@
 .footer-col p {
     margin-bottom: 0.7rem;
 }
+
+/* Main layout end  */
+
+/* Other pages */
+.top-image {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    height: 200px;
+}
+.top-title {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+/* Other pages End */
+
+/* Blog */
+.blog-side-panel {
+    border: 1px solid #212529;
+    padding: 0px 10%;
+    margin-bottom: 10%;
+}
+.blog-main-img {
+    text-align: center;
+    padding: 5% 0;
+    margin-top: 10%;
+}
+.blog-main-img img {
+    max-height: 100px;
+    display: inline-block;
+}
+
+.blog-side-panel .info,
+.blog-side-panel .info-middle {
+    padding: 10% 0px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #212529;
+}
+
+.blog-side-panel .info-middle {
+}
+.blog-side-panel .info-bottom {
+    padding: 10% 0px;
+    padding-bottom: 30px;
+}
+.blog-side-panel .info-bottom i {
+    font-size: xx-large;
+    margin-right: 10px;
+}
+
+.blog-post-area {
+}
+
+.blog-post {
+    border: 1px solid #212529;
+    margin-bottom: 20px;
+    padding: 2%;
+}
+/* Blog ENd */
