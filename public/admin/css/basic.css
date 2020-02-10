@@ -42,7 +42,7 @@ body {
     color: #000;
     font-weight: 800;
     padding-bottom: 20px;
-    border-bottom: 2px solid #00ca79;
+    border-bottom: 2px solid #c63838;
     margin-bottom: 10px;
 }
 
@@ -52,7 +52,7 @@ body {
     padding-bottom: 20px;
     font-style: italic;
     margin-bottom: 30px;
-    border-bottom: 1px dashed #00ca79;
+    border-bottom: 1px dashed #c63838;
 }
 
 /*==============================================

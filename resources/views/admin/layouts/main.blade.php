@@ -97,6 +97,9 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="{{route('admin.all_contacts')}} "><i class="fas fa-phone-alt"></i>Contacts</a>
+                    </li>
 
 
 

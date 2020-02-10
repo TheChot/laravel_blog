@@ -14,6 +14,9 @@
 Route::get('/', 'FrontendController@index')->name('home');
 Route::get('/blog', 'FrontendController@blogAll')->name('blog');
 Route::get('/blog/{id}', 'FrontendController@blogSingle')->name('blog.single');
+Route::get('/contact-us', 'FrontendController@contactPage')->name('contact_us');
+Route::post('/contact-us', 'FrontendController@contactSubmit')->name('contact_submit');
+
 
 Auth::routes(['register' => false]);
 // Auth::routes();
@@ -47,4 +50,9 @@ Route::group(['prefix'=>'admin','middleware'=>'auth', 'as'=>'admin.'], function(
     Route::post('/news-add', 'BlogController@addBlog')->name('blog.add');
     Route::get('/news-edit/{id}','BlogController@editBlogPage')->name('news.edit.page');
     Route::post('/news-edit/{id}', 'BlogController@editBlog')->name('news.edit');
+
+    // Contact Form managememnt
+    Route::get('/contact-form','AdminController@allContacts')->name('all_contacts');
+    Route::get('/contact-form/{id}','AdminController@singleContact')->name('single_contact');
+    
 });

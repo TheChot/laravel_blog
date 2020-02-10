@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('page-name')
-
+<h1>{{$blog->title}}</h1>
 
 @endsection
 

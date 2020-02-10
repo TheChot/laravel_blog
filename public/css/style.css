@@ -275,3 +275,38 @@
     padding: 2%;
 }
 /* Blog ENd */
+
+/* Contact Page */
+.contact-area {
+    /* height: 500px; */
+    /* position: relative; */
+    margin: auto;
+}
+.contact-details {
+    padding: 50px;
+    background-color: #bababa;
+    color: white;
+    margin: 50px 0;
+    /* position: absolute;
+    top: 20%;
+    left: 20%; */
+}
+.contact-form {
+    padding: 50px;
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    /* background-color: yellow; */
+    /* height: 100%; */
+    /* right: 11%; */
+    /* position: absolute;
+    z-index: -10;
+    padding-top: 100px; */
+}
+.contact-details .det {
+    margin: 20px 0;
+}
+
+.contact-details .det .col-xs-4 {
+    margin-right: 15px;
+}
+/* Contact PAge End */
