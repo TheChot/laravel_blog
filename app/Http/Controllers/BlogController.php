@@ -63,6 +63,8 @@ class BlogController extends Controller
         $blog->title = $request->title;
         $blog->body = $request->body;
         $blog->cover_img = $fileNameToStore;
+        $blog->status = $request->status;
+        $blog->featured = $request->featured;
 
 
         $blog->save();
@@ -119,6 +121,8 @@ class BlogController extends Controller
 
         $blog->title = $request->title;
         $blog->body = $request->body;
+        $blog->status = $request->status;
+        $blog->featured = $request->featured;
 
         
         $blog->save();

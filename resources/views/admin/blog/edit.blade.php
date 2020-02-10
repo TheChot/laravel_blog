@@ -14,7 +14,7 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <div class="panel panel-danger">
+        <div class="panel panel-primary">
             <div class="panel-heading">
                 EDIT BLOG
             </div>
@@ -47,8 +47,41 @@
                     </div>
 
                     <div class=" form-group">
-                        <label>Text area</label>
+                        <label>Body</label>
                         <textarea class="form-control" rows="7" name="body">{{$blog->body}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Featured Article <em>Article appears on featured column(Max 4 latest Articles)</em>
+                        </label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="featured" id="optionsRadios1" value="1" @if($blog->status ==
+                                1) checked @endif >Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="featured" id="optionsRadios2" value="0" @if($blog->status ==
+                                0) checked @endif>No
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Active Article</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="status" id="optionsRadios1" value="0" @if($blog->status == 0)
+                                checked @endif>Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="status" id="optionsRadios2" value="1" @if($blog->status == 1)
+                                checked @endif>No
+                            </label>
+                        </div>
+
                     </div>
 
                     <button type="submit" class="btn btn-primary">ADD CHANGES </button>

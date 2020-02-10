@@ -32,10 +32,14 @@
                 <div class="info-middle">
                     <h4>Featured Posts</h4>
                     <div class="links">
-                        <h5>An Examplle of an Article</h5>
-                        <p>Date Created: 25/05/20</p>
-                        <h5>An Examplle of an Article 2</h5>
-                        <p>Date Created: 25/05/20</p>
+                        @if (count($featured_blogs) > 0)
+                        @foreach ($featured_blogs as $featured_blog)
+                        <h5>{{$featured_blog->title}}</h5>
+                        <p>{{$featured_blog->created_at}}</p>
+                        @endforeach
+                        @else
+                        <h5>No Featured Articles</h5>
+                        @endif
                     </div>
                 </div>
                 <div class="info-bottom">
