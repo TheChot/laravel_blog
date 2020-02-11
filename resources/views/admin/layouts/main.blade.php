@@ -87,6 +87,19 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="#"><i class="fa fa-desktop "></i>Team Members <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{route('admin.team.index')}}"><i class="fa fa-toggle-on"></i>All Team
+                                    Members</a>
+                            </li>
+                            <li>
+                                <a href="{{route('admin.team.add.page')}}"><i class="fa fa-bell "></i>Add Team
+                                    Member</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="#"><i class="fa fa-desktop "></i>Users <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>

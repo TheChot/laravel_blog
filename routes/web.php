@@ -16,6 +16,7 @@ Route::get('/blog', 'FrontendController@blogAll')->name('blog');
 Route::get('/blog/{id}', 'FrontendController@blogSingle')->name('blog.single');
 Route::get('/contact-us', 'FrontendController@contactPage')->name('contact_us');
 Route::post('/contact-us', 'FrontendController@contactSubmit')->name('contact_submit');
+Route::get('/team', 'FrontendController@teamPage')->name('team');
 
 
 Auth::routes(['register' => false]);
@@ -32,11 +33,11 @@ Auth::routes(['register' => false]);
 
 
 //Team Pages
-Route::get('/team-members', 'TeamController@index')->name('team.index');
-Route::get('/team-member/add', 'TeamController@addTeamMemberPage')->name('team.add.page');
-Route::post('/team-member/add', 'TeamController@addTeamMember')->name('team.add');
-Route::get('/team-member/edit/{id}', 'TeamController@editTeamMemberPage')->name('team.edit.page');
-Route::post('/team-member/edit/{id}', 'TeamController@editTeamMember')->name('team.edit');
+
+
+
+
+
 
 // Admin
 // Route::get('/login', 'AdminController@login')->name('admin.login');
@@ -54,5 +55,12 @@ Route::group(['prefix'=>'admin','middleware'=>'auth', 'as'=>'admin.'], function(
     // Contact Form managememnt
     Route::get('/contact-form','AdminController@allContacts')->name('all_contacts');
     Route::get('/contact-form/{id}','AdminController@singleContact')->name('single_contact');
+
+    // Team Members
+    Route::get('/team-members', 'TeamController@index')->name('team.index');
+    Route::get('/team-member/add', 'TeamController@addTeamMemberPage')->name('team.add.page');
+    Route::post('/team-member/add', 'TeamController@addTeamMember')->name('team.add');
+    Route::get('/team-member/edit/{id}', 'TeamController@editTeamMemberPage')->name('team.edit.page');
+    Route::post('/team-member/edit/{id}', 'TeamController@editTeamMember')->name('team.edit');
     
 });

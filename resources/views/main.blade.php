@@ -21,6 +21,7 @@
         <ul class="myNav-list mynav-left">
             <li><a href="{{route('home')}}">Home</a></li>
             <li><a href="{{route('blog')}}">News</a></li>
+            <li><a href="{{route('team')}}">Team</a></li>
             <li><a href="{{route('contact_us')}}">Contact Us</a></li>
             <li>About Us</li>
         </ul>
