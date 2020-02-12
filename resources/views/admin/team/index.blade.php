@@ -38,7 +38,7 @@
                                 <td>{{$team_member->title}}</td>
                                 <td>{{$team_member->name}}</td>
                                 <td>{{$team_member->level}}</td>
-                                <td>@if($team_member->status == 0) <p class="btn btn-primary">ACTIVE</p> @else <p
+                                <td>@if($team_member->status == 0) <p class="btn btn-success">ACTIVE</p> @else <p
                                         class="btn btn-danger">DISABLED</p> @endif</td>
                                 <td><a href="{{route('admin.team.edit.page', $team_member->id)}} "
                                         class="btn btn-info">EDIT</a> </td>

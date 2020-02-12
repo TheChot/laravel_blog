@@ -62,5 +62,12 @@ Route::group(['prefix'=>'admin','middleware'=>'auth', 'as'=>'admin.'], function(
     Route::post('/team-member/add', 'TeamController@addTeamMember')->name('team.add');
     Route::get('/team-member/edit/{id}', 'TeamController@editTeamMemberPage')->name('team.edit.page');
     Route::post('/team-member/edit/{id}', 'TeamController@editTeamMember')->name('team.edit');
+
+    // Add Users
+    Route::get('/users', 'AdminController@allUsers')->name('users.index');
+    Route::get('/user-add', 'AdminController@addUserPage')->name('user.add.page');
+    Route::post('/user-add', 'AdminController@addUser')->name('user.add');
+    Route::get('/user-edit/{id}', 'AdminController@addUserPage')->name('user.edit.page');
+    Route::get('/user-edit', 'AdminController@editUser')->name('user.edit');
     
 });

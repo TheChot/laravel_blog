@@ -103,10 +103,10 @@
                         <a href="#"><i class="fa fa-desktop "></i>Users <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="panel-tabs.html"><i class="fa fa-toggle-on"></i>All Users</a>
+                                <a href="{{route('admin.users.index')}}"><i class="fa fa-toggle-on"></i>All Users</a>
                             </li>
                             <li>
-                                <a href="notification.html"><i class="fa fa-bell "></i>Add Users</a>
+                                <a href="{{route('admin.user.add')}}"><i class="fa fa-bell "></i>Add Users</a>
                             </li>
                         </ul>
                     </li>
