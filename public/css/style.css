@@ -5,7 +5,7 @@
     position: fixed;
     width: 100%;
     text-align: center;
-    z-index: 10000;
+    z-index: 1000;
     border-bottom: 1px solid grey;
 }
 .mynav-left {
@@ -112,7 +112,9 @@
         opacity: 1;
     }
 } */
-
+.img-responsive {
+    max-width: 100%;
+}
 @keyframes fade {
     from {
         opacity: 0.4;
@@ -310,3 +312,39 @@
     margin-right: 15px;
 }
 /* Contact PAge End */
+
+/* Team member Page */
+.team-area {
+    text-align: center;
+}
+.team-member-card {
+    /* margin: auto; */
+    box-shadow: 3px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    /* margin-right: 25px; */
+    padding: 15px 0;
+    margin: 0 40px;
+    margin-bottom: 40px;
+
+    display: inline-block;
+}
+.card-img {
+    text-align: center;
+}
+
+.card-img img {
+    display: inline-block;
+    width: 200px;
+    border-radius: 50%;
+    height: 200px;
+}
+
+.card-bod {
+    text-align: center;
+}
+.card-info {
+    padding: 0 50px;
+    text-align: left;
+}
+
+/* Team Member Page end */
