@@ -57,7 +57,7 @@
             <h1>{{$blog->title}}</h1>
             <p><em>{{$blog->created_at}}</em></p>
             <p>
-                {{$blog->body}}
+                {!!$blog->body!!}
             </p>
 
 

@@ -1,14 +1,14 @@
 @extends('admin.layouts.main')
 @section('css')
 {{-- <link href="{{ asset('admin/css/bootstrap-fileupload.min.css') }}" rel="stylesheet" /> --}}
-
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 @endsection
 
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <h1 class="page-head-line">ADD BLOG</h1>
-        <h1 class="page-subhead-line">Use this page to add a post </h1>
+        <h1 class="page-head-line">EDIT BLOG</h1>
+        <h1 class="page-subhead-line">Use this page to edit a post </h1>
 
     </div>
 </div>
@@ -20,7 +20,7 @@
             </div>
             <div class="panel-body">
                 <form role="form" method="POST" action="{{route('admin.news.edit',$blog->id)}}"
-                    enctype="multipart/form-data">
+                    enctype="multipart/form-data" onsubmit="submitQuill()">
                     @csrf
 
                     <div class="form-group">
@@ -48,7 +48,13 @@
 
                     <div class=" form-group">
                         <label>Body</label>
-                        <textarea class="form-control" rows="7" name="body">{{$blog->body}}</textarea>
+                        <div id="editor">
+                            {!!$blog->body!!}
+                        </div>
+                        <textarea class="form-control" rows="7" name="body" style="display:none;"
+                            id="hiddenTextArea">{!!$blog->body!!}</textarea>
+
+
                     </div>
                     <div class="form-group">
                         <label>Featured Article <em>Article appears on featured column(Max 4 latest Articles)</em>
@@ -96,4 +102,21 @@
 
 @section('scripts')
 {{-- <script src="{{ asset('admin/js/bootstrap-fileupload.js') }}"></script> --}}
+
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<!-- Initialize Quill editor -->
+<script>
+    var quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+
+  function submitQuill(){
+      var quillText = document.getElementById('editor').children[0].innerHTML;
+
+      document.getElementById('hiddenTextArea').value = quillText;
+
+      console.log(document.getElementById('hiddenTextArea').value);
+  }
+</script>
 @endsection
