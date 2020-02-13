@@ -7,8 +7,8 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <h1 class="page-head-line">ADD TEAM MEMBER</h1>
-        <h1 class="page-subhead-line">Use this page to add a Team Member </h1>
+        <h1 class="page-head-line">ADD USER</h1>
+        <h1 class="page-subhead-line">Use this page to add a User </h1>
 
     </div>
 </div>
@@ -16,7 +16,7 @@
     <div class="col-md-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                ADD TEAM MEMBER
+                ADD A USER
             </div>
             <div class="panel-body">
                 <form role="form" method="POST" action="{{route('admin.user.add')}}" enctype="multipart/form-data">
@@ -76,7 +76,7 @@
 
                     </div>
 
-                    <button type="submit" class="btn btn-primary">SAVE TEAM MEMBER </button>
+                    <button type="submit" class="btn btn-primary">SAVE USER </button>
 
                 </form>
             </div>

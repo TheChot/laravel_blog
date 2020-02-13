@@ -323,10 +323,17 @@
     border-radius: 5px;
     /* margin-right: 25px; */
     padding: 15px 0;
-    margin: 0 40px;
+    margin: 0 10px;
     margin-bottom: 40px;
-
+    border: 1px solid rgba(0, 0, 0, 0.2);
     display: inline-block;
+    transition: 0.3s;
+}
+
+.team-member-card:hover {
+    box-shadow: 5px 6px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
 }
 .card-img {
     text-align: center;

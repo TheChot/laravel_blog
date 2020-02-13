@@ -67,7 +67,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth', 'as'=>'admin.'], function(
     Route::get('/users', 'AdminController@allUsers')->name('users.index');
     Route::get('/user-add', 'AdminController@addUserPage')->name('user.add.page');
     Route::post('/user-add', 'AdminController@addUser')->name('user.add');
-    Route::get('/user-edit/{id}', 'AdminController@addUserPage')->name('user.edit.page');
-    Route::get('/user-edit', 'AdminController@editUser')->name('user.edit');
+    Route::get('/user-edit/{id}', 'AdminController@editUserPage')->name('user.edit.page');
+    Route::post('/user-edit/{id}', 'AdminController@editUser')->name('user.edit');
     
 });

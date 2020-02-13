@@ -70,14 +70,33 @@ class AdminController extends Controller
     }
 
     
-    public function editUsersPage($id){
+    public function editUserPage($id){
 
         $user = User::find($id);
         return view('admin.users.edit', compact('user'));
     }
 
     
-    public function editUser(){
+    public function editUser(Request $request, $id){
+        
+        $this->validate($request,[
+            'name'=>'required',
+            'email'=>'required',            
+            'username'=>'required',            
+        ]);
+
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->username = $request->username;
+        $user->status = $request->status;
+        $user->user_type = $request->user_type;
+
+        $user->save();
+
+
+
         return redirect()->back();
     }
 }

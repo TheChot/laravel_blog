@@ -3,8 +3,8 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <h1 class="page-head-line">ALL TEAM MEMBERS</h1>
-        <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
+        <h1 class="page-head-line">ALL USERS</h1>
+        <h1 class="page-subhead-line">The current users on your system </h1>
 
     </div>
 </div>
@@ -43,7 +43,7 @@
                                 <td>@if($user->status == 0) <p class="btn btn-success">ACTIVE</p> @else <p
                                         class="btn btn-danger">DISABLED</p> @endif</td>
                                 <td><a href="{{route('admin.user.edit.page', $user->id)}} "
-                                        class="btn btn-info">EDIT</a> </td>
+                                        class="btn btn-primary">EDIT</a> </td>
                                 <td>{{$user->created_at}}</td>
 
                             </tr>

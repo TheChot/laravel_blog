@@ -7,8 +7,8 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <h1 class="page-head-line">ADD TEAM MEMBER</h1>
-        <h1 class="page-subhead-line">Use this page to add a Team Member </h1>
+        <h1 class="page-head-line">EDIT USER</h1>
+        <h1 class="page-subhead-line">Use this page to edit a User </h1>
 
     </div>
 </div>
@@ -16,53 +16,72 @@
     <div class="col-md-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                ADD TEAM MEMBER
+                EDIT A USER
             </div>
             <div class="panel-body">
-                <form role="form" method="POST" action="{{route('admin.team.add')}}" enctype="multipart/form-data">
+                <form role="form" method="POST" action="{{route('admin.user.edit', $user->id)}}"
+                    enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group">
-                        <label>Enter Title</label>
-                        <input class="form-control" type="text" name="title">
-
-                    </div>
-                    <div class="form-group">
                         <label>Enter Name</label>
-                        <input class="form-control" type="text" name="name">
+                        <input class="form-control" type="text" name="name" value="{{$user->name}}">
 
                     </div>
                     <div class="form-group">
-                        <label>Level</label>
-                        <input class="form-control" type="number" name="level">
+                        <label>Enter Email</label>
+                        <input class="form-control" type="email" name="email" value="{{$user->email}}">
+
                     </div>
                     <div class="form-group">
-                        <label class="control-label">Upload Image</label>
+                        <label>Enter Username</label>
+                        <input class="form-control" type="text" name="username" value="{{$user->username}}">
 
-                        <input type="file" name="cover_image" id="">
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Password</label>
+                        <input class="form-control" type="password" name="password">
+
+                    </div>
+                    <div class="form-group">
+                        <label>User Type </label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="user_type" id="optionsRadios1" value="0" @if($user->user_type
+                                == 0) checked @endif checked>User
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="user_type" id="optionsRadios2" value="1" @if($user->user_type
+                                == 1) checked @endif>Admin
+                            </label>
+                        </div>
+
                     </div>
 
-                    <div class=" form-group">
-                        <label>Bio</label>
-                        <textarea class="form-control" rows="7" name="bio"></textarea>
-                    </div>
+
+
+
 
                     <div class="form-group">
                         <label>Active </label>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="status" id="optionsRadios1" value="0" checked>Yes
+                                <input type="radio" name="status" id="optionsRadios1" value="0" @if($user->status == 0)
+                                checked @endif checked>Yes
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="status" id="optionsRadios2" value="1">No
+                                <input type="radio" name="status" id="optionsRadios2" value="1" @if($user->status == 1)
+                                checked @endif>No
                             </label>
                         </div>
 
                     </div>
 
-                    <button type="submit" class="btn btn-primary">SAVE TEAM MEMBER </button>
+                    <button type="submit" class="btn btn-primary">SAVE USER </button>
 
                 </form>
             </div>
