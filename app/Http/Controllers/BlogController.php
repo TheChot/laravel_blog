@@ -69,7 +69,7 @@ class BlogController extends Controller
 
         $blog->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Article Saved');
 
     }
 
@@ -127,7 +127,7 @@ class BlogController extends Controller
         
         $blog->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Article Saved');
 
     }
 }

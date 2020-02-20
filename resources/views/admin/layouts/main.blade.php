@@ -33,6 +33,7 @@
 </head>
 
 <body>
+    @include('admin.inc.messages')
 
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
@@ -123,6 +124,7 @@
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
+            @include('admin.inc.messages')
             <div id="page-inner">
                 @yield('content')
             </div>
@@ -146,6 +148,15 @@
     @yield('scripts')
     <!-- CUSTOM SCRIPTS -->
     <script src="{{ asset('admin/js/custom.js') }}"></script>
+    <script>
+        function toastAppear(){
+            var toast= document.getElementById('toast');
+
+            toast.style.display = 'block';
+            toast.classList.add('hide-toast');
+        }
+        document.addEventListener('DOMContentLoaded', toastAppear);
+    </script>
 
 </body>
 
