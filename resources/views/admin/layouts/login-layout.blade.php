@@ -26,12 +26,21 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
     <link href="{{ asset('admin/css/login-custom.css') }}" rel="stylesheet">
-
+    
 </head>
 
 <body>
+    @include('admin.inc.messages')
     @yield('content')
-
+    <script>
+        function toastAppear(){
+                var toast= document.getElementById('toast');
+    
+                toast.style.display = 'block';
+                toast.classList.add('hide-toast');
+            }
+            document.addEventListener('DOMContentLoaded', toastAppear);
+    </script>
 </body>
 
 </html>

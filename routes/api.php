@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/send-inquiry', 'ApiController@sendInquiry');
+Route::post('/contact-us', 'ApiController@contactUs');

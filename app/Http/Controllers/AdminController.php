@@ -66,7 +66,7 @@ class AdminController extends Controller
         $new_user->user_type = $request->user_type;
 
         $new_user->save();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'User Saved');
     }
 
     
@@ -88,7 +88,10 @@ class AdminController extends Controller
         $user = User::find($id);
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = Hash::make($request->password);
+        if(isset($request->password)){
+            $user->password = Hash::make($request->password);
+        }
+        
         $user->username = $request->username;
         $user->status = $request->status;
         $user->user_type = $request->user_type;
@@ -97,6 +100,6 @@ class AdminController extends Controller
 
 
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'User Saved');
     }
 }

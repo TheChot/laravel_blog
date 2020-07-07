@@ -15,3 +15,46 @@ body {
     margin-top: 10%;
     background-color: white;
 }
+
+@keyframes alertOpacity {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+#toast {
+    display: none;
+}
+
+#toast p {
+    margin: 0;
+    text-align: center;
+}
+.error-alert {
+    background-color: orangered;
+    color: white;
+    position: absolute;
+    top: 11%;
+    right: 2%;
+    padding: 1% 2%;
+    border-radius: 5%;
+}
+
+.success-alert {
+    background-color: #75b612;
+    color: white;
+    position: absolute;
+    top: 11%;
+    right: 2%;
+    padding: 1% 2%;
+    border-radius: 5%;
+}
+
+.hide-toast {
+    animation: alertOpacity;
+    animation-duration: 5s;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+}
