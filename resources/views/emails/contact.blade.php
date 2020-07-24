@@ -10,10 +10,12 @@
 
 <body>
 
-    <h2>You have a message from {{$data->first_name.' '.$data->last_name}}</h2>
-    <h3>{{$data->phone_number}}</h3>
-    <h3>{{$data->email}}</h3>
-    <p>{{$data->body}}</p>
+    <h2>You have a message from {{$name}}</h2>
+    <h3>Phone Number: {{$phone_number}}</h3>
+    <h3>Email: {{$email}}</h3>
+    <h3>Company: {{$company}}</h3>
+    <h3>Subject: {{$subject}}</h3>
+    <p>{{$body}}</p>
 
 
 </body>

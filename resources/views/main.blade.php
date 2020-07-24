@@ -5,7 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ config('app.name', 'Blogger') }}</title>
+    {{-- <title>{{ config('app.name', 'Blogger') }}</title> --}}
+    <title>Copperplanet</title>
+    <meta name="Description" content="Zambias premium software service provider. We work with our clients to provide IT and Software solutions to optimize and enhance their
+                business.">
+
+    <meta name="KeyWords"
+        content="copperplanet, zambia, hosting, websites, games, lusaka, emails, web development, applications, react, laravel, ecommerce, online shopping, database, server, backend, frontend, customer service">
+    {{-- Meta tags --}}
+    <meta property="og:title" content="CopperPlanet - Home">
+    <meta property="og:image" content="{{asset('img/pic2.jpg')}}">
+    <meta property="og:description" content="Zambias premium software service provider. We work with our clients to provide IT and Software solutions to optimize and enhance their
+                business.">
+    <meta property="og:url" content="{{route('home')}}">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -17,70 +31,11 @@
 </head>
 
 <body>
-    <div class="mynav-front">
-        <ul class="myNav-list mynav-left">
-            <li><a href="{{route('home')}}">Home</a></li>
-            <li><a href="{{route('blog')}}">News</a></li>
-            <li><a href="{{route('team')}}">Team</a></li>
-            <li><a href="{{route('contact_us')}}">Contact Us</a></li>
-            <li>About Us</li>
-        </ul>
-        <div class="mynav-img">
-            <img src="{{asset('img/logo.png')}}" class="img-responsive" alt="">
-        </div>
-        <ul class="myNav-list mynav-right">
-            <li>Home</li>
-            <li>Home</li>
-            <li>Home</li>
-            <li>Home</li>
-        </ul>
-    </div>
+
 
     @yield('content')
 
-    <div class="my-footer section-150">
-        <div class="container">
-            <div class="footer-title">
-                <div class="myfooter-img">
-                    <img src="{{asset('img/logo.png')}}" class="img-fluid" alt="">
-
-                </div>
-                <h4>LARAVEL BLOGGER APPLICATION: MADE FOR EASE</h4>
-
-            </div>
-            <div class="row footer-col-container">
-                <div class="col-md-4 footer-col">
-                    <h4> Learn More </h4>
-                    <p><a href="{{route('blog')}}">NEWS</a></p>
-                    <p>APPLY NOW</p>
-                    <p>CONTACT US</p>
-                    <p>ABOUT US</p>
-
-                </div>
-                <div class="col-md-4 footer-col">
-                    <h4> Contact Us </h4>
-                    <p>+2609999999999</p>
-                    <p>+2609999999999</p>
-                    <p>+2609999999999</p>
-                    <p>EMAIL@COPPERPLANET.COM</p>
-                    <p>EMAIL@COPPERPLANET.COM</p>
-
-
-                </div>
-                <div class="col-md-4 footer-col">
-                    <h4> Our Addresses </h4>
-                    <p>35 MUMBWA ROAD</p>
-                    <p>LUSAKA WEST</p>
-                    <p>LUSAKA</p>
-                    <p>ZAMBIA</p>
-
-
-                </div>
-            </div>
-
-        </div>
-
-    </div>
+    {{-- @include('inc.notification') --}}
     <!--Bootstrap Scripts-->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">

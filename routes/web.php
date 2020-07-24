@@ -16,6 +16,7 @@ Route::get('/blog', 'FrontendController@blogAll')->name('blog');
 Route::get('/blog/{id}', 'FrontendController@blogSingle')->name('blog.single');
 Route::get('/contact-us', 'FrontendController@contactPage')->name('contact_us');
 Route::post('/contact-us', 'FrontendController@contactSubmit')->name('contact_submit');
+Route::post('/contact-us-home', 'FrontendController@contactHomeSubmit')->name('contact_home_submit');
 Route::get('/team', 'FrontendController@teamPage')->name('team');
 
 

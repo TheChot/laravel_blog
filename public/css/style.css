@@ -1,357 +1,171 @@
-/* Main layout  */
-.mynav-front {
-    background-color: transparent;
-    padding: 2px 10px;
-    position: fixed;
-    width: 100%;
-    text-align: center;
-    z-index: 1000;
-    border-bottom: 1px solid grey;
-}
-.mynav-left {
-    text-align: left !important;
-}
-.mynav-right {
-    text-align: right !important;
-}
-.mynav-img {
-    display: inline-block;
-    width: 5%;
+:root {
+    --main-blue-color: rgb(102, 252, 241);
+    --main-gray-color: rgb(197, 198, 199);
+    --darker-blue-color: rgb(69, 162, 158);
+    --blue-black-color: rgb(31, 40, 51);
+    --half-black-color: rgb(11, 12, 16);
 }
 
-.mynav-img img {
-    width: 100%;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+    color: var(--main-blue-color);
+    font-weight: lighter;
 }
-.myNav-list {
-    display: inline-block;
-    width: 30%;
+
+p {
+    color: var(--main-gray-color);
 }
-.myNav-list li {
+
+.black-bg {
+    background-color: var(--half-black-color);
+}
+
+.half-black-bg {
+    background-color: var(--blue-black-color);
+}
+
+.dark-blue-bottom {
+    border-bottom: 5px solid var(--darker-blue-color);
+}
+
+.dark-blue-border-left {
+    border-left: 3px solid var(--darker-blue-color);
+}
+.dark-blue-border-right {
+    border-right: 3px solid var(--darker-blue-color);
+}
+
+.top-image {
+    text-align: center;
+    background: 
+    /* top, transparent red, faked with gradient */ linear-gradient(
+            rgba(31, 40, 51, 0.5),
+            rgba(31, 40, 51, 0.5)
+        ),
+        /* bottom, image */ url(../img/topimage.jpg);
+
+    padding: 5% 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.top-image h1 {
+    font-weight: bolder;
+    font-size: 12vh;
+}
+@media screen and (max-width: 650px) {
+    .top-image h1 {
+        font-size: 7vh;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .top-image h1 {
+        font-size: 5vh;
+    }
+}
+
+.home-section-1 {
+    padding: 5% 0;
+}
+
+.home-section-1 .text-area {
+    text-align: center;
+}
+
+.home-section-1 .site-card {
+    margin: 10px;
+}
+
+.home-section-1 .site-card .site-card-text {
+    padding: 10px;
+}
+
+.home-section-1 .site-card h4 {
+    font-weight: normal;
+}
+
+.home-section-2 .bg-image {
+    background-image: url(../img/pic7.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+}
+
+.home-section-2 .text-area {
+    padding: 5% 2%;
+}
+.home-section-2 .text-area .icon-left {
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+.button-area {
+    text-align: center;
+    margin-top: 3%;
+}
+
+.home-section-1 .site-button {
+    border: 1px solid var(--main-blue-color);
+    padding: 5px 10px;
+    background-color: var(--main-blue-color);
+    color: white;
     display: inline-block;
     text-decoration: none;
-    color: white;
-    margin: 0 10px;
-}
-/* Slider CSS */
-.sliderContainer {
-    height: 700px;
+    transition: 0.2s;
 }
 
-.mySlides {
-    background-color: #080202;
-    height: 100%;
+.home-section-1 .site-button:hover {
+    background-color: transparent;
+    color: var(--main-blue-color);
+    transition: 0.2s;
+}
+
+.home-section-3 .bg-image {
+    background-image: url(../img/pic1.jpg);
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
-    display: none;
-}
-
-.prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white !important;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-.dot-div {
-    text-align: center;
-    position: absolute;
-    bottom: 2%;
-    left: 50%;
-}
-/* Position the "next button" to the right */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* The dots/bullets/indicators */
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active,
-.dot:hover {
-    background-color: #717171;
-}
-
-.faded {
-    /* -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s; */
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-/* @-webkit-keyframes fade {
-    from {
-        opacity: 0.4;
-    }
-    to {
-        opacity: 1;
-    }
-} */
-.img-responsive {
-    max-width: 100%;
-}
-@keyframes fade {
-    from {
-        opacity: 0.4;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Slider CSS end */
-
-.section-150 {
-    margin-top: 150px;
-    /* margin-bottom: 150px; */
-}
-.section-2 .title-part {
-    text-align: center;
-    margin-bottom: 50px;
-}
-.front-mid-icons-container {
-    margin: auto;
-}
-.front-mid-icons {
-    text-align: center;
-}
-
-.front-mid-icons i {
-    font-size: xx-large;
-    border: 2px solid gray;
-    padding: 20px;
-    border-radius: 50%;
-}
-
-.front-mid-icons h4 {
-    margin-top: 20px;
-}
-
-.section-3 {
-    background-color: #080202;
-    /* height: 300px; */
-    padding: 100px 0;
-    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    text-align: center;
+    min-height: 500px;
 }
 
-.section-3 h1 {
+.home-section-3 .form-area {
+    padding: 5%;
+}
+
+.home-section-3 .form-area input,
+.home-section-3 .form-area textarea {
+    width: 100%;
+    background-color: var(--blue-black-color);
+    border: 1px solid var(--main-blue-color);
+    color: var(--main-blue-color);
+    margin-bottom: 2%;
+    padding: 10px;
+}
+
+.home-section-3 .form-area button {
+    border: 1px solid var(--main-blue-color);
+    padding: 5px 10px;
+    background-color: var(--main-blue-color);
     color: white;
-}
-
-.section-3 a {
     display: inline-block;
-    border: 2px solid white;
-    color: white;
-    padding: 20px;
-    margin-top: 20px;
+    transition: 0.2s;
 }
 
-.section-4 .title-part {
-    text-align: center;
-    margin-bottom: 50px;
+.home-section-3 .form-area button:hover {
+    color: var(--main-blue-color);
+    background-color: transparent;
+    transition: 0.2s;
 }
 
-.section-4 h4 {
-    margin: 10px 0;
-}
-
-.my-footer {
-    background-color: #717171;
-    padding: 3% 0;
-    color: white;
-}
-.footer-title {
+.footer-section {
+    padding: 2% 0;
     text-align: center;
 }
-
-.myfooter-img {
-    display: inline-block;
-    width: 10%;
-    margin-bottom: 10px;
-}
-
-.footer-col-container {
-    margin: auto;
-    margin-top: 30px;
-}
-
-.footer-col {
-    display: inline-block;
-    text-align: center;
-}
-
-.footer-col h4 {
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-.footer-col p {
-    margin-bottom: 0.7rem;
-}
-
-/* Main layout end  */
-
-/* Other pages */
-.top-image {
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    height: 200px;
-}
-.top-title {
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-
-/* Other pages End */
-
-/* Blog */
-.blog-side-panel {
-    border: 1px solid #212529;
-    padding: 0px 10%;
-    margin-bottom: 10%;
-}
-.blog-main-img {
-    text-align: center;
-    padding: 5% 0;
-    margin-top: 10%;
-}
-.blog-main-img img {
-    max-height: 100px;
-    display: inline-block;
-}
-
-.blog-side-panel .info,
-.blog-side-panel .info-middle {
-    padding: 10% 0px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #212529;
-}
-
-.blog-side-panel .info-middle {
-}
-.blog-side-panel .info-bottom {
-    padding: 10% 0px;
-    padding-bottom: 30px;
-}
-.blog-side-panel .info-bottom i {
-    font-size: xx-large;
-    margin-right: 10px;
-}
-
-.blog-post-area {
-}
-
-.blog-post {
-    border: 1px solid #212529;
-    margin-bottom: 20px;
-    padding: 2%;
-}
-/* Blog ENd */
-
-/* Contact Page */
-.contact-area {
-    /* height: 500px; */
-    /* position: relative; */
-    margin: auto;
-}
-.contact-details {
-    padding: 50px;
-    background-color: #bababa;
-    color: white;
-    margin: 50px 0;
-    /* position: absolute;
-    top: 20%;
-    left: 20%; */
-}
-.contact-form {
-    padding: 50px;
-    box-shadow: 5px 10px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    /* background-color: yellow; */
-    /* height: 100%; */
-    /* right: 11%; */
-    /* position: absolute;
-    z-index: -10;
-    padding-top: 100px; */
-}
-.contact-details .det {
-    margin: 20px 0;
-}
-
-.contact-details .det .col-xs-4 {
-    margin-right: 15px;
-}
-/* Contact PAge End */
-
-/* Team member Page */
-.team-area {
-    text-align: center;
-}
-.team-member-card {
-    /* margin: auto; */
-    box-shadow: 3px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    /* margin-right: 25px; */
-    padding: 15px 0;
-    margin: 0 10px;
-    margin-bottom: 40px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    display: inline-block;
-    transition: 0.3s;
-}
-
-.team-member-card:hover {
-    box-shadow: 5px 6px rgba(0, 0, 0, 0.4);
-    cursor: pointer;
-    transition: 0.3s;
-}
-.card-img {
-    text-align: center;
-}
-
-.card-img img {
-    display: inline-block;
-    width: 200px;
-    border-radius: 50%;
-    height: 200px;
-}
-
-.card-bod {
-    text-align: center;
-}
-.card-info {
-    padding: 0 50px;
-    text-align: left;
-}
-
-/* Team Member Page end */

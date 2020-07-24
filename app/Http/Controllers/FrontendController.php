@@ -77,4 +77,30 @@ class FrontendController extends Controller
 
         return view('team.index', compact('team_members'));
     }
+
+    public function contactHomeSubmit(Request $request){
+        $this->validate($request,[
+            'name'=>'required',
+            'email'=>'required',
+            'body'=>'required',            
+        ]);
+
+        $email_data = (object)['email'=>$request->email, 'name'=>$request->name];
+        $email_content = [
+            'name'=>$request->name,
+            'company'=>$request->company,
+            'email'=>$request->email,
+            'subject'=>$request->subject,
+            'phone_number'=>$request->phone_number,            
+            'body'=>$request->body,            
+        ];
+
+        Mail::send('emails.contact', $email_content, function ($m) use ($email_data) {
+            $m->from('site@copperplanetzm.com', 'Copperplanet Site');
+
+            $m->to('chotxhm@gmail.com', $email_data->name)->subject('You have a Message from your Website');
+        });
+
+        return redirect()->back()->with('contact-success','Your Mesage has been sent we will get back to you');
+    }
 }
